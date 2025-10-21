@@ -1,0 +1,289 @@
+
+============================================================
+Problem 1 (ID: HumanEval/52)
+============================================================
+Prompt:
+
+
+
+def below_threshold(l: list, t: int):
+    """Return True if all numbers in the list l are below threshold t.
+    >>> below_threshold([1, 2, 4, 10], 100)
+    True
+    >>> below_threshold([1, 20, 4, 10], 5)
+    False
+    """
+
+
+Canonical Solution:
+
+
+    return all(x < t for x in l)
+
+
+
+============================================================
+Problem 2 (ID: HumanEval/134)
+============================================================
+Prompt:
+
+
+def check_if_last_char_is_a_letter(txt):
+    '''
+    Create a function that returns True if the last character
+    of a given string is an alphabetical character and is not
+    a part of a word, and False otherwise.
+    Note: "word" is a group of characters separated by space.
+
+    Examples:
+    check_if_last_char_is_a_letter("apple pie") ➞ False
+    check_if_last_char_is_a_letter("apple pi e") ➞ True
+    check_if_last_char_is_a_letter("apple pi e ") ➞ False
+    check_if_last_char_is_a_letter("") ➞ False 
+    '''
+
+
+Canonical Solution:
+
+
+    if len(txt) == 0: return False
+    if len(txt) == 1: return txt.isalpha()
+    return txt[-1].isalpha() and txt[-2] == " "
+
+
+
+============================================================
+Problem 3 (ID: HumanEval/51)
+============================================================
+Prompt:
+
+
+
+def remove_vowels(text):
+    """
+    remove_vowels is a function that takes string and returns string without vowels.
+    >>> remove_vowels('')
+    ''
+    >>> remove_vowels("abcdef\nghijklm")
+    'bcdf\nghjklm'
+    >>> remove_vowels('abcdef')
+    'bcdf'
+    >>> remove_vowels('aaaaa')
+    ''
+    >>> remove_vowels('aaBAA')
+    'B'
+    >>> remove_vowels('zbcd')
+    'zbcd'
+    """
+
+
+Canonical Solution:
+
+
+    return "".join(list(filter(lambda ch: ch not in "aeiouAEIOU", text)))
+
+
+
+============================================================
+Problem 4 (ID: HumanEval/66)
+============================================================
+Prompt:
+
+
+def digitSum(s):
+    """Task
+    Write a function that takes a string as input and returns the sum of the upper characters only'
+    ASCII codes.
+
+    Examples:
+        digitSum("") => 0
+        digitSum("abAB") => 131
+        digitSum("abcCd") => 67
+        digitSum("helloE") => 69
+        digitSum("woArBld") => 131
+        digitSum("aAaaaXa") => 153
+    """
+
+
+Canonical Solution:
+
+
+    return sum([ord(ch) for ch in s if ch.isupper()])
+
+
+
+============================================================
+Problem 5 (ID: HumanEval/147)
+============================================================
+Prompt:
+
+
+def get_max_triples(n):
+    """
+    You are given a positive integer n. You have to create an integer array a of length n.
+        For each i (1 ≤ i ≤ n), the value of a[i] = i * i - i + 1.
+        Return the number of triples (a[i], a[j], a[k]) of a where i < j < k, 
+    and a[i] + a[j] + a[k] is a multiple of 3.
+
+    Example :
+        Input: n = 5
+        Output: 1
+        Explanation: 
+        a = [1, 3, 7, 13, 21]
+        The only valid triple is (1, 7, 13).
+    """
+
+
+Canonical Solution:
+
+
+
+    if n <= 2: return False
+    one_cnt = 1 + (n - 2) // 3 * 2 + (n - 2) % 3
+    zero_cnt = n - one_cnt
+    return one_cnt * (one_cnt - 1) * (one_cnt - 2) // 6 + zero_cnt * (zero_cnt - 1) * (zero_cnt - 2) // 6
+
+
+
+============================================================
+Problem 6 (ID: HumanEval/101)
+============================================================
+Prompt:
+
+
+def words_string(s):
+    """
+    You will be given a string of words separated by commas or spaces. Your task is
+    to split the string into words and return an array of the words.
+    
+    For example:
+    words_string("Hi, my name is John") == ["Hi", "my", "name", "is", "John"]
+    words_string("One, two, three, four, five, six") == ["One", "two", "three", "four", "five", "six"]
+    """
+
+
+Canonical Solution:
+
+
+    words = (s.replace(",", " ")).split()
+    return [word for word in words if word != ""]
+
+
+
+============================================================
+Problem 7 (ID: HumanEval/24)
+============================================================
+Prompt:
+
+
+
+def largest_divisor(n: int) -> int:
+    """ For a given number n, find the largest number that divides n evenly, smaller than n
+    >>> largest_divisor(15)
+    5
+    """
+
+
+Canonical Solution:
+
+
+
+    for i in range(2, n):
+        if n % i == 0: return n // i
+    return 1
+
+
+
+============================================================
+Problem 8 (ID: HumanEval/125)
+============================================================
+Prompt:
+
+
+def split_words(txt):
+    '''
+    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you
+    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the
+    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+    Examples
+    split_words("Hello world!") ➞ ["Hello", "world!"]
+    split_words("Hello,world!") ➞ ["Hello", "world!"]
+    split_words("abcdef") == 3 
+    '''
+
+
+Canonical Solution:
+
+
+    whitespace = tuple(' \n\r\t')
+    if any([x in txt for x in whitespace]): return txt.split()
+    if "," in txt: return txt.split(",")
+    cnt = 0
+    for ch in txt:
+        if ch.islower() and (ord(ch) - ord("a")) % 2 == 1: cnt += 1
+    return cnt
+
+
+
+============================================================
+Problem 9 (ID: HumanEval/145)
+============================================================
+Prompt:
+
+
+def order_by_points(nums):
+    """
+    Write a function which sorts the given list of integers
+    in ascending order according to the sum of their digits.
+    Note: if there are several items with similar sum of their digits,
+    order them based on their index in original list.
+
+    For example:
+    >>> order_by_points([1, 11, -1, -11, -12]) == [-1, -11, 1, -12, 11]
+    >>> order_by_points([]) == []
+    """
+
+
+Canonical Solution:
+
+
+    def weight(x):
+        x_list = list(str(x))
+        if x_list[0] == "-":
+            x_list = x_list[1:]
+            x_list = list(map(int, x_list))
+            x_list[0] = -x_list[0]
+        else:
+            x_list = list(map(int, x_list))
+        return sum(x_list)
+    return sorted(nums, key=weight)
+
+
+
+============================================================
+Problem 10 (ID: HumanEval/50)
+============================================================
+Prompt:
+
+
+
+def encode_shift(s: str):
+    """
+    returns encoded string by shifting every character by 5 in the alphabet.
+    """
+    return "".join([chr(((ord(ch) + 5 - ord("a")) % 26) + ord("a")) for ch in s])
+
+
+def decode_shift(s: str):
+    """
+    takes as input string encoded with encode_shift function. Returns decoded string.
+    """
+
+
+Canonical Solution:
+
+
+
+    return "".join([chr((ord(ch) - ord("a") - 5 + 26) % 26 + ord("a")) for ch in s])
+
+
