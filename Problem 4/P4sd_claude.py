@@ -1,9 +1,10 @@
-# Write code for a function that takes a string as input and returns the sum of the ASCII codes of the uppercase characters only.
-# Uppercase characters are 'A' to 'Z'.
-# If the string is empty or contains no uppercase letters, return 0.
-# Consider how to identify uppercase characters and how to sum their ASCII values. 
-# After implementing your initial solution, review your approach by identifying any potential issues, edge cases, or mistakes.
-#  Debug your own solution, correcting any flaws you find. Finally, state the rationale for your final, corrected answer along with the code. 
+# Task: Implement a function that takes a string and returns the sum of ASCII values of uppercase letters only ('A'–'Z'). If the string is empty or has no uppercase letters, it should return 0.Instructions:
+# Reason through your initial approach step by step, thinking about how to identify uppercase characters and calculate their ASCII sum.
+# Consider potential issues, edge cases, or mistakes in your approach.
+# Debug your solution, making any necessary corrections.
+# Explain the rationale for your final method and provide the corrected Python function implementation.
+
+
 
 def claude_sd_pass1(s):
     total = 0

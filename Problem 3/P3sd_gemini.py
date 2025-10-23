@@ -1,9 +1,9 @@
-#Write code for a function that takes a string and returns a new string with all vowels removed.
-# Vowels include both lowercase and uppercase letters: 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'.
-# The function should preserve all other characters, including consonants, spaces, and newlines.
-# Consider how to handle empty strings and strings with no vowels. 
-# After implementing your initial solution, review your approach by identifying any potential issues, edge cases, or mistakes.
-#  Debug your own solution, correcting any flaws you find. Finally, state the rationale for your final, corrected answer along with the code.
+# Task: Write a function that accepts a string and returns a version of the string with all vowels removed. Both uppercase and lowercase vowels ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U') should be excluded, while all other characters,including consonants, spaces, punctuation, and newlines, remain unchanged.Instructions:
+# Think step by step about how to identify vowels in the string.
+# Consider different ways to construct a new string without vowels (e.g., iteration, list comprehension, or built-in functions).
+# Take into account special cases, such as empty strings or strings that contain no vowels.
+# After reasoning through your approach, write the Python function implementing your solution.
+
 
 def gemini_sd_pass1(input_string):
     VOWELS = "aeiouAEIOU"

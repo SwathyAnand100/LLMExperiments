@@ -5,6 +5,14 @@
 # Remember, a "word" is a group of characters separated by space.
 # After explaining your reasoning, provide your Python function implementation.
 
+#COT Prompt2:
+# Task: Write a function that accepts a string txt and returns True if the string’s last character is a letter that does not belong to a word, and False otherwise. A “word” is defined as a sequence of characters separated by spaces.Instructions:
+# Think through how to identify the last character of the string.
+# Consider how to determine whether this character is alphabetical.
+# Analyze how to check if it is part of a word or stands alone.
+# After reasoning through the approach step by step, implement the Python function that performs this check.
+
+
 def gemini_cot_pass1(txt):
     """
     Returns True if the last character of a string is an alphabetical character 
