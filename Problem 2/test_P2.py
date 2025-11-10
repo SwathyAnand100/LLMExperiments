@@ -59,12 +59,11 @@ import os, sys
 # Ensure we can import problem_2 from this folder
 sys.path.append(os.path.dirname(__file__))
 
-from problem_2 import (
-    gemini_cot_pass1, gemini_cot_pass2, gemini_cot_pass3,
-    gemini_sd_pass1,  gemini_sd_pass2,  gemini_sd_pass3,
-    claude_cot_pass1, claude_cot_pass2, claude_cot_pass3,
-    claude_sd_pass1,  claude_sd_pass2,  claude_sd_pass3,
-)
+from P2cot_gemini import gemini_cot_pass1, gemini_cot_pass2, gemini_cot_pass3
+from P2cot_claude import claude_cot_pass1, claude_cot_pass2, claude_cot_pass3
+from P2sd_gemini import gemini_sd_pass1, gemini_sd_pass2, gemini_sd_pass3
+from P2sd_claude import claude_sd_pass1, claude_sd_pass2, claude_sd_pass3
+
 
 FUNCS = [
     gemini_cot_pass1, gemini_cot_pass2, gemini_cot_pass3,
