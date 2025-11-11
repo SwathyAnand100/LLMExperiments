@@ -10,11 +10,13 @@ Coverage reports help identify untested lines or branches and guide improvements
 Install the required packages:
 ```bash
 pip install pytest pytest-cov
+```
 
 ##To view coverage stats, go to the required directory and run this:
-python -m pytest -p pytest_cov --cov=. --cov-branch --cov-report=term-missing -q
+```python -m pytest -p pytest_cov --cov=. --cov-branch --cov-report=term-missing -q```
 
 ## To generate the xml and HTML reports, run this in the directory:
-python -m pytest -p pytest_cov --cov=. --cov-branch \                                                  
+``` bash
+  python -m pytest -p pytest_cov --cov=. --cov-branch \                                                  
   --cov-report=html:../coverage_reports/<name>_html \
-  --cov-report=xml:../coverage_reports/<name>_coverage.xml -q
+  --cov-report=xml:../coverage_reports/<name>_coverage.xml -q```
